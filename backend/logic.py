@@ -3,7 +3,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 import csv
-from geopy.distance import geodesic
+import googlemaps
 
 distance_matrix = []
 
@@ -24,16 +24,13 @@ def load_places_from_csv(filename):
     return places
 import os
 
-# Ustalamy pełną ścieżkę do pliku
 filename = r'C:\Users\Dell\Documents\projecttour\backend\data\data.csv'
 
-# Ładujemy dane z CSV
 places = load_places_from_csv(filename)
 coords = load_coords_from_csv(filename)
 
 
 
-import googlemaps
 
 def create_distance_matrix(coords, api_key):
     gmaps = googlemaps.Client(key=api_key)
@@ -64,8 +61,7 @@ def create_distance_matrix(coords, api_key):
     return distance_matrix_km, duration_matrix_min
 
 
-api="AIzaSyC540eWeCfm4P_y2TM9FBFB5zoqS8Jsg2E"
-# Wczytanie macierzy odległości
+api=""
 distance_matrix, duration_matrix_min = create_distance_matrix(coords, api)
 
 def initialize_path(size, n_cities):
@@ -232,7 +228,7 @@ best_path, best_history, avg, max_history = genetic_algorithm(
 )
 print(coords[best_path[1]])
 # Wizualizacja wyników
-plot_results(coords, best_path, best_history, avg, max_history)
+#plot_results(coords, best_path, best_history, avg, max_history)
 print(min(best_history))
 print(best_path)
 base_url = "https://www.google.com/maps/dir/"
