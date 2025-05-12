@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourPlan - Trasa</title>
+</head>
+<body>
+    <h1>Twoja trasa turystyczna</h1>
+    <ul>
+        {% for idx in best_path %}
+            <li>{{ places[idx] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Długość trasy: {{ route_length }} km</h3>
+    <p><strong>Łączna długość trasy:</strong> {{ total_km|round(8) }} km</p>
+    <p><strong>Szacowany czas przejazdu:</strong> 
+        ~{{ (total_minutes / 60) | round(2) }} h
+    </p>
+
+    <a href="{{ url }}" target="_blank">Zobacz trasę na mapie Google</a>
+</body>
+</html>

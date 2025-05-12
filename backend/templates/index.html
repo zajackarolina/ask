@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourPlan - Wybór Zabytków</title>
+</head>
+<body>
+    <h1>Wybierz zabytki do zwiedzania</h1>
+    <form method="POST" action="/route">
+        {% for place in places %}
+            <div>
+                <input type="checkbox" name="places" value="{{ place }}">
+                <label>{{ place }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Wyznacz trasę</button>
+    </form>
+</body>
+</html>
