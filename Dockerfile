@@ -20,6 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy rest of the app
 COPY app/ /app/
 
+RUN chmod +x /app/entrypoint.sh
+
 # Install Node.js dependencies
 RUN npm install
 

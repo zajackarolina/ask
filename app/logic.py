@@ -171,43 +171,7 @@ def genetic_algorithm(n_cities, mutation_rate, crossover_rate, population_size, 
     
     return best_path, best_history, avg, max_history
 
-def plot_results(cities, best_path, best_history, avg, max_history):
-    x, y = zip(*cities) #coords
-    plt.figure(figsize=(10, 6))
-    plt.scatter(x, y, color='red', label='Cities')
 
-    best_x = [cities[best_path[i]][0] for i in range(len(best_path))] + [cities[best_path[0]][0]]
-    best_y = [cities[best_path[i]][1] for i in range(len(best_path))] + [cities[best_path[0]][1]]
-    plt.plot(best_x, best_y, color='blue', label='Best Path', linewidth=2)
-    
-    plt.title("Best Path with Cities")
-    plt.xlabel("X")
-    plt.ylabel("Y")
-    plt.legend()
-    #plt.show()
-
-    plt.figure(figsize=(10, 6))
-    plt.plot(best_history, label='Best Distance')
-    plt.xlabel('Generation')
-    plt.ylabel('Distance')
-    plt.title('Best Distance vs Generation')
-    plt.legend()
-    #plt.show()
-    plt.figure(figsize=(10, 6))
-    plt.plot(avg, label='Mean distance')
-    plt.xlabel('Generation')
-    plt.ylabel('Distance')
-    plt.title('Mean Distance vs Generation')
-    plt.legend()
-    #plt.show()
-    
-    plt.figure(figsize=(10, 6))
-    plt.plot(max_history, label='Max Distance')
-    plt.xlabel('Generation')
-    plt.ylabel('Distance')
-    plt.title('Max Distance vs Generation')
-    plt.legend()
-    #plt.show()
 def calculate_total_distance_and_time(path, distance_matrix, duration_matrix):
     total_km = 0
     total_minutes = 0

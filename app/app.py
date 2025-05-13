@@ -48,7 +48,6 @@ def generate_route():
     coords = load_coords_from_csv('./models/data.csv')
     distance_matrix, duration_matrix_min = create_distance_matrix(coords, api_key)
 
-    route_length = total_distance(best_path)
     total_km, total_minutes = calculate_total_distance_and_time(best_path, distance_matrix, duration_matrix_min)
     formatted_time = format_duration(total_minutes)
 
@@ -57,7 +56,7 @@ def generate_route():
     base_url = "https://www.google.com/maps/dir/"
     url = base_url + ordered_path + "/data=!3m1!4b1!4m2!4m1!3e2"
     
-    return render_template('result.html', best_path=best_path, places=places, url=url, route_length=route_length, total_km=total_km, total_minutes=formatted_time
+    return render_template('result.html', best_path=best_path, places=places, url=url, total_km=total_km, total_minutes=formatted_time
 )
 
 if __name__ == '__main__':
