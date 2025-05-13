@@ -24,11 +24,10 @@ def load_places_from_csv(filename):
     return places
 import os
 
-filename = r'C:\Users\Dell\Documents\projecttour\backend\data\data.csv'
+filename = r'data\data.csv'
 
 places = load_places_from_csv(filename)
 coords = load_coords_from_csv(filename)
-
 
 
 
