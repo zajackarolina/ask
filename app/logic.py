@@ -197,13 +197,5 @@ best_path, best_history, avg, max_history = genetic_algorithm(
     selection_method="roulette",  
     elite_size=0.1  
 )
-print(coords[best_path[1]])
-# Wizualizacja wyników
-#plot_results(coords, best_path, best_history, avg, max_history)
-print(min(best_history))
-print(best_path)
-base_url = "https://www.google.com/maps/dir/"
-ordered_path = "/".join([f"{coords[i][0]},{coords[i][1]}" for i in best_path +[best_path[0]]])
-url = base_url + ordered_path + "/data=!3m1!4b1!4m2!4m1!3e2" 
-print("Otwórz trasę na mapie:", url)
+
 
