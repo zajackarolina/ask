@@ -1,0 +1,5 @@
+flask
+googlemaps
+numpy
+matplotlib
+python-dotenv
