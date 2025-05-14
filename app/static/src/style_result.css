@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+    background: url('../images/krakow_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'Merriweather', serif;
+    overflow: hidden;
+    color: #2e2e2e;
+}
+
+.container {
+    background-color: rgba(254, 252, 232, 0.9);
+    border: 2px solid #63594b;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Heading */
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 32px;
+    text-align: center;
+    border-bottom: 2px solid #f59e0b;
+    padding-bottom: 10px;
+}
+
+/* Summary Section */
+.summary {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a3f2d;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* List */
+ul {
+    list-style-type: decimal;
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+}
+
+li {
+    padding-left: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Map */
+.map-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.map-image {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.map-image:hover {
+    opacity: 0.9;
+}
+
+/* Button */
+.button-container {
+    text-align: center;
+}
+
+.map-link {
+    display: inline-block;
+    background-image: linear-gradient(135deg, #f59e0b, #b96505);
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.map-link:hover {
+    background-image: linear-gradient(135deg, #c27d07, #864902);
+}

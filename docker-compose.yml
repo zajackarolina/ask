@@ -4,14 +4,21 @@ services:
   flask-app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-flask
     env_file:
     - .env
-    ports:
-      - "5000:5000"
     volumes:
       - ./app:/app
-      #- /app/node_modules
+    ports:
+      - "5000:5000"
     environment:
+      #- FLASK_ENV=development
       - FLASK_DEBUG=1
-    restart: unless-stopped
+
+  tailwind-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-tailwind
+    volumes:
+      - ./app:/app
+    working_dir: /app

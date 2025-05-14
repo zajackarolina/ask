@@ -1,11 +1,6 @@
-#!/bin/sh
-# entrypoint.sh
+#!/bin/bash
 
-# Ensure output directory exists
-mkdir -p /app/static/dist
-
-# Build Tailwind CSS before starting Flask
-npm run watch &
-
-# Start Flask
-exec flask run
+# Start Flask in debug mode
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run --host=0.0.0.0

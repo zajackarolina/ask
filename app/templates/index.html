@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TourPlan - Wybór Zabytków</title>
-    <link href="{{ url_for('static', filename='dist/output.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="../static/src/style_index.css"> </head>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
-    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-xl">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Wybierz zabytki do zwiedzania</h1>
-        <form method="POST" action="/route" class="space-y-4">
+<body>
+    <div class="container">
+        <h1>Wybierz zabytki do zwiedzania</h1>
+        <form method="POST" action="/route">
             {% for place in places %}
-                <div class="flex items-center space-x-3">
-                    <input type="checkbox" name="places" value="{{ place }}" id="place-{{ loop.index }}"
-                        class="accent-blue-600 w-5 h-5">
-                    <label for="place-{{ loop.index }}" class="text-gray-700">{{ place }}</label>
+                <div class="place-item">
+                    <input type="checkbox" name="places" value="{{ place }}" id="place-{{ loop.index }}">
+                    <label for="place-{{ loop.index }}"> {{ place }}</label>
                 </div>
             {% endfor %}
-            <div class="pt-4">
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-200">
+            <div style="padding-top: 16px;">
+                <button type="submit">
                     Wyznacz trasę
                 </button>
             </div>

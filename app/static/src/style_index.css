@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+    background: url('../images/krakow_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'Merriweather', serif;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(254, 252, 232, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    border: 2px solid #63594b;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 32px;
+    text-align: center;
+    border-bottom: 2px solid #f59e0b;
+    padding-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.place-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+    content: "✓";
+}
+
+input[type="checkbox"]:checked::before {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 2px;
+    left: 5px;
+}
+
+
+input[type="checkbox"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+label {
+    font-size: 17px;
+    color: #2e2e2e;
+    font-weight: 500;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-image: linear-gradient(135deg, #f59e0b, #b96505);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-image: linear-gradient(135deg, #c27d07, #864902);
+}
