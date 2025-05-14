@@ -14,11 +14,3 @@ services:
     environment:
       #- FLASK_ENV=development
       - FLASK_DEBUG=1
-
-  tailwind-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile-tailwind
-    volumes:
-      - ./app:/app
-    working_dir: /app
