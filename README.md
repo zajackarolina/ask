@@ -1,10 +1,16 @@
-# Kraków Tourist Route Planner (Dockerized)
+# Kraków Tourist Route Planner
 
 ## Overview
 
 This web application helps users plan their tourist routes in Kraków by selecting points of interest they want to visit. It utilizes a genetic algorithm to find a near-optimal order of visiting these locations, minimizing the total walking distance. The application leverages the Google Maps API to calculate distances and durations between selected locations and displays the route on an interactive map and a static map.
 
 This version of the application is containerized using Docker, making it easier to set up and run consistently across different environments.
+
+
+
+![Screenshot from 2025-05-14 21-32-31](https://github.com/user-attachments/assets/cae71d82-f9b5-4981-bd0e-6150a230f8a9)
+![Screenshot from 2025-05-14 21-32-51](https://github.com/user-attachments/assets/216bc184-cadd-42db-ba1c-1b1f37e92c1e)
+
 
 ## Features
 
@@ -44,7 +50,7 @@ This version of the application is containerized using Docker, making it easier 
     * Create a `.env` file in the root directory of the project.
     * Add your Google Maps API key to the `.env` file:
         ```
-        GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+        GOOGLE_MAPS_API_KEY="YOUR_GOOGLE_MAPS_API_KEY"
         ```
         *(Ensure you have enabled the Directions API and Maps Static API in your Google Cloud Console.)*
 
@@ -66,10 +72,7 @@ This version of the application is containerized using Docker, making it easier 
 ## Data Source
 
 The list of points of interest and their coordinates are stored in the `models/data.csv` file. The CSV file should have the following columns:
-
-```csv
-name,lat,lng
-```
+`name,lat,lng`
 ### Docker
 - `docker compose build` - build docker (image)
 - `docker compose build --no-cache` - build docker from 0
