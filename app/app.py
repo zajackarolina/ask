@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
-from logic import genetic_algorithm, load_coords_from_csv, total_distance, calculate_total_distance_and_time, create_distance_matrix, format_duration
+from logic import genetic_algorithm, load_coords_from_csv, total_distance, calculate_total_distance_and_time, create_distance_matrix, format_duration, load_places_from_csv
 import os
 from dotenv import load_dotenv
 
@@ -10,14 +10,7 @@ api_key = os.getenv("GOOGLE_MAPS_API_KEY")
 app = Flask(__name__,
             static_folder="static",
             template_folder="templates")
-# Funkcja wczytująca miejsca z CSV
-def load_places_from_csv(filename):
-    places = []
-    with open(filename, newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            places.append(row['name'])
-    return places
+
 
 @app.route('/', methods=['GET'])
 def index():

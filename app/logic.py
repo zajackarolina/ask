@@ -187,15 +187,5 @@ def format_duration(minutes):
     mins = int(minutes % 60)
     return f"{hours} h {mins} min" if hours else f"{mins} min"
 
-# algorytm
-best_path, best_history, avg, max_history = genetic_algorithm(
-    n_cities=len(places),
-    mutation_rate=0.05,
-    crossover_rate=0.98,
-    population_size=50,
-    generations=100,
-    selection_method="roulette",  
-    elite_size=0.1  
-)
 
 
